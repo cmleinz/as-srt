@@ -1,13 +1,13 @@
 [package]
 name = "libsrt-sys"
-version = "1.5.1"
-authors = ["Hieu Nguyen <nthieu173@gmail.com>"]
+authors = ["Caleb Leinz <caleb@leinz.io>", "Hieu Nguyen <nthieu173@gmail.com>"]
+version = "0.1.0"
 edition = "2021"
 license = "MPL-2.0"
-description = "Bindings for libsrt"
+description = "Bindgen bindings to SRT"
 links = "srt"
 build = "build.rs"
-repository = "https://github.com/nthieu173/srt-rs"
+repository = "https://github.com/cmleinz/as-srt"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

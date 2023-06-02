@@ -5,9 +5,10 @@ license = "MPL-2.0"
 description = "Idiomatic rust bindings to the C++ implementation of SRT"
 version = "0.1.0"
 edition = "2021"
+repository = "https://github.com/cmleinz/as-srt"
 
 [dependencies]
-libsrt-sys = { path = "libsrt-sys", version = "1.4.13" }
+libsrt-sys = { path = "libsrt-sys", version = "*" }
 libc = "0.2"
 futures = "0.3"
 
