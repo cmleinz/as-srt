@@ -1,0 +1,37 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "master", "dev" ]
+  pull_request:
+    branches: [ "master", "dev" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Checkout submodules
+      run: git submodule update --init --recursive    
+
+    - name: Build
+      run: cargo build --verbose
+
+    - name: Cargo Test
+      run: cargo test --all-features -- --nocapture --test-threads=1
+
+    - name: Cargo Clippy Check
+      run: cargo clippy --all-features --workspace -- -D warnings
+    
+  check_style:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Cargo Format
+      run: cargo fmt -- --check
