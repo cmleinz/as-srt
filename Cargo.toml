@@ -6,6 +6,17 @@ description = "Idiomatic rust bindings to the C++ implementation of SRT"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+libsrt-sys = { path = "libsrt-sys", version = "1.4.13" }
+libc = "0.2"
+futures = "0.3"
+
+os_socketaddr = "0.2.4"
+thiserror = "1.0.40"
+
+
+[target.'cfg(windows)'.dependencies]
+winapi = {version = "0.3", features = ["winsock2"] }
+
+[features]
+static = ["libsrt-sys/static"]
