@@ -1,0 +1,11 @@
+[package]
+name = "as-srt"
+authors = ["Caleb Leinz <caleb@leinz.io>", "Hieu Nguyen <nthieu173@gmail.com>"]
+license = "MPL-2.0"
+description = "Idiomatic rust bindings to the C++ implementation of SRT"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
